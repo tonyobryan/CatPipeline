@@ -1,0 +1,5 @@
+### Cat
+POST  http://localhost:7241/api/sayhi/fluffy
+
+### Not a cat
+POST  http://localhost:7241/api/sayhi/dogo

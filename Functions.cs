@@ -24,7 +24,7 @@ namespace CatPipeline
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = "sayhi/{catName}")] HttpRequest req,
             ILogger log, string catName, CancellationToken cancellationToken)
         {
-            return await mediator.Send(new SayHiHandeler.Request(catName), cancellationToken);
+            return await mediator.Send(new SayHiHandler.Request(catName), cancellationToken);
         }
     }
 }

@@ -14,14 +14,16 @@ namespace CatPipeline
     {
         public override void Configure(IFunctionsHostBuilder builder)
         {
+            builder.Services.AddLogging();
             builder
                 .Services
                 .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
                 .AddValidatorsFromAssembly(typeof(StartUp).Assembly);
 
             builder.Services
-                .AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>))
-                .AddTransient(typeof(IRequestExceptionHandler<,,>), typeof(Tony<,,>));
+                .AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
+                .AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>))
+                .AddTransient(typeof(IRequestExceptionHandler<,,>), typeof(ExceptionBehavior<,,>));
         }
     }
 }

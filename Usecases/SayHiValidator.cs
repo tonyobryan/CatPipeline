@@ -1,9 +1,5 @@
 ﻿using FluentValidation;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CatPipeline.Usecases
 {
@@ -16,7 +12,7 @@ namespace CatPipeline.Usecases
             RuleFor(x => x.Message).NotEmpty();
             RuleFor(x=>x.Message)
                 .Must(x => !knownDogs.Contains(x))
-                .WithMessage(x => $"Cat {x} is a known covert dog operative!");
+                .WithMessage(x => $"Cat {x.Message} is a known covert dog operative!");
         }
     }
 }

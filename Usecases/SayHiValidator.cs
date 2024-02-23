@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CatPipeline.Usecases
 {
-    public class SayHiValidator : AbstractValidator<SayHiHandeler.Request>
+    public class SayHiValidator : AbstractValidator<SayHiHandler.Request>
     {
         public SayHiValidator()
         {

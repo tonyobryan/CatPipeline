@@ -1,12 +1,11 @@
 ﻿using CatPipeline.Response;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace CatPipeline.Usecases
 {
-    public class SayHiHandeler : IRequestHandler<SayHiHandeler.Request, OkResponse>
+    public class SayHiHandler : IRequestHandler<SayHiHandler.Request, OkResponse>
     {
         public async Task<OkResponse> Handle(Request request, CancellationToken cancellationToken)
         {
